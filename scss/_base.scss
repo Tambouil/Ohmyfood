@@ -7,15 +7,55 @@ $tertiary-color: #99e2d0;
 $body-font: "Roboto", sans-serif;
 $title-font: "Shrikhand", cursive;
 
-body {
-  font-family: $font-family;
+@mixin button($type) {
+  border: 0;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  font-size: 1.1rem;
+  border-radius: 100px;
+  color: white;
+  background: rgb(255, 121, 218);
+  background-image: linear-gradient(
+    0deg,
+    $primary-color 0%,
+    $secondary-color 100%
+  );
+  cursor: pointer;
+  transition-duration: 0.25s;
+  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+
+  &:hover {
+    background-color: white;
+    box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: $font-family;
-  color: $primary-color;
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: $body-font;
+}
+
+h1 {
+  font-family: $title-font;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  position: relative;
+  z-index: 1;
+
+  h1 {
+    padding: 1rem;
+    font-size: 2rem;
+  }
 }
