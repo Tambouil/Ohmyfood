@@ -34,3 +34,24 @@
     }
   }
 }
+
+.steps {
+  h3 {
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
+  .step {
+    padding: 1.5rem;
+    margin: 1rem;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
+    border-radius: 1.25rem;
+    background-color: #f6f6f6;
+    display: flex;
+    align-items: center;
+    position: relative;
+    i {
+      margin-right: 1.5rem;
+    }
+  }
+}
