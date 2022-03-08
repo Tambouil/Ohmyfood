@@ -6,6 +6,7 @@ $secondary-color: #ff79da;
 $tertiary-color: #99e2d0;
 $body-font: "Roboto", sans-serif;
 $title-font: "Shrikhand", cursive;
+$desktop: 992px;
 
 @mixin button($type) {
   border: 0;
@@ -57,5 +58,43 @@ header {
   h1 {
     padding: 1rem;
     font-size: 2rem;
+  }
+}
+
+footer {
+  padding: 0.8rem 1.5rem 2rem 1.5rem;
+  background-color: #353436;
+  color: #fff;
+  width: 100%;
+  .footer {
+    &__logo {
+      font-family: $title-font;
+      padding: 0.5rem 0;
+    }
+    li {
+      padding: 0.3rem 0;
+      font-size: 15px;
+    }
+    i {
+      width: 1rem;
+      margin-right: 0.5rem;
+    }
+    @media (min-width: $desktop) {
+      max-width: 1440px;
+      margin: 0 auto;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      ul {
+        display: flex;
+      }
+      li {
+        margin: 0 1rem;
+      }
+    }
+  }
+  @media (min-width: $desktop) {
+    padding: 2rem;
   }
 }
