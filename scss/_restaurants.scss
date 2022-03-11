@@ -29,13 +29,26 @@
 
     &__wrapper {
       @media (min-width: $desktop) {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
       }
 
       &__starter {
         h4 {
           text-transform: uppercase;
+          position: relative;
+          padding-bottom: 0.5rem;
+
+          &::after {
+            content: "";
+            width: 55px;
+            height: 5px;
+            background-color: $tertiary-color;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+          }
         }
         &--choices {
           position: relative;
@@ -48,7 +61,7 @@
           h5 {
             margin: 0;
             font-weight: 500;
-            font-size: 20px;
+            font-size: 18px;
           }
 
           .price {
@@ -56,6 +69,10 @@
             align-items: center;
             justify-content: space-between;
             padding-top: 0.5rem;
+
+            p {
+              overflow: hidden;
+            }
 
             span {
               font-weight: 500;
@@ -68,14 +85,13 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-top: 2rem;
     }
     button {
       margin: 0 auto;
-      padding-bottom: 2rem;
+      padding: 3rem;
       a {
         @include button(primary);
-        padding: 1.35rem 4.5rem;
+        padding: 1.15rem 4.5rem;
       }
     }
   }
