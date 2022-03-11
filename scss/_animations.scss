@@ -1,0 +1,51 @@
+.icon {
+  fill: transparent;
+  stroke: #ff2581;
+  stroke-width: 50;
+  cursor: pointer;
+  position: relative;
+
+  svg {
+    overflow: visible;
+    width: 3rem;
+  }
+
+  path {
+    transform-origin: center;
+  }
+
+  .heart-background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    stroke: none;
+  }
+
+  .heart-main:hover path {
+    animation: stroke-animation 2s ease-in-out forwards;
+  }
+
+  .heart-main:hover ~ .heart-background path {
+    animation: fade-animation 2s ease-in-out forwards;
+  }
+}
+
+@keyframes stroke-animation {
+  0% {
+    fill: transparent;
+    transform: scale(1);
+  }
+
+  20% {
+    fill: #ff2581;
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(1);
+  }
+
+  100% {
+    fill: #ff2581;
+  }
+}
