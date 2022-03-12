@@ -90,7 +90,7 @@
       margin: 0 auto;
       padding: 3rem;
       a {
-        @include button(primary);
+        @include button();
         padding: 1.15rem 4.5rem;
       }
     }
