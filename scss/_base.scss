@@ -8,34 +8,6 @@ $body-font: "Roboto", sans-serif;
 $title-font: "Shrikhand", cursive;
 $desktop: 992px;
 
-@mixin button() {
-  border: 0;
-  padding: 0.75rem 1.5rem;
-  font-weight: 500;
-  font-size: 1.1rem;
-  border-radius: 100px;
-  color: white;
-  background: rgb(255, 121, 218);
-  background-image: linear-gradient(
-    0deg,
-    $primary-color 0%,
-    $secondary-color 100%
-  );
-  cursor: pointer;
-  transition-duration: 0.25s;
-  box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
-
-  &:hover {
-    filter: brightness(1.05);
-    box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.5);
-  }
-
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -47,7 +19,7 @@ h1 {
   font-family: $title-font;
 }
 
-header {
+.header {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,50 +27,52 @@ header {
   position: relative;
   z-index: 1;
 
-  h1 {
+  &__title {
     padding: 1rem;
     font-size: 2rem;
   }
-  a {
+  &__return {
     position: absolute;
     left: 2.5rem;
   }
 }
 
 footer {
-  padding: 0.8rem 1.5rem 2rem 1.5rem;
   background-color: #353436;
   color: #fff;
   width: 100%;
-  .footer {
-    &__logo {
-      font-family: $title-font;
-      padding: 0.5rem 0;
-    }
-    li {
-      padding: 0.3rem 0;
-      font-size: 15px;
-    }
-    i {
-      width: 1rem;
-      margin-right: 0.5rem;
-    }
-    @media (min-width: $desktop) {
-      max-width: 1440px;
-      margin: 0 auto;
+  padding: 0.8rem 1.5rem 2rem 1.5rem;
 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      ul {
-        display: flex;
-      }
-      li {
-        margin: 0 1rem;
-      }
-    }
-  }
   @media (min-width: $desktop) {
     padding: 2rem;
+  }
+}
+
+.footer {
+  &__logo {
+    font-family: $title-font;
+    padding: 0.5rem 0;
+  }
+  &__link {
+    padding: 0.3rem 0;
+    font-size: 15px;
+  }
+  &__icon {
+    width: 1rem;
+    margin-right: 0.5rem;
+  }
+  @media (min-width: $desktop) {
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__links {
+      display: flex;
+    }
+    &__link {
+      margin: 0 1rem;
+    }
   }
 }

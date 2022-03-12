@@ -7,7 +7,7 @@
   font-size: 18px;
   font-weight: 500;
 
-  i {
+  &__icon {
     margin-right: 1rem;
   }
 }
@@ -16,81 +16,82 @@
   text-align: center;
   background-color: #f6f6f6;
   padding: 2rem;
-  h2 {
+  &__title {
     font-size: 28px;
     font-weight: 700;
     margin: 1rem 0;
   }
-  p {
+  &__text {
     font-weight: 300;
     margin-top: 1rem;
     margin-bottom: 3rem;
   }
-  button {
+  &__btn {
     margin: 0 auto;
     padding-bottom: 2rem;
-    a {
+    &--link {
       @include button();
     }
   }
 }
 
-.steps {
+.tutorial {
   padding-bottom: 1rem;
   max-width: 1440px;
   margin: 0 auto;
-  h3 {
+  &__title {
     margin-top: 2rem;
     padding: 1rem;
     font-size: 22px;
     font-weight: 700;
     counter-reset: section;
   }
+}
 
-  .step {
-    @media (min-width: $desktop) {
-      display: flex;
-    }
-    &__item {
-      display: flex;
-      align-items: center;
-      position: relative;
-      background-color: #f6f6f6;
-      padding: 1.5rem;
-      margin: 1rem 1.5rem;
-      box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
-      border-radius: 1.25rem;
-      font-weight: 500;
-      @media (min-width: 992px) {
-        flex: 1;
-      }
-      i {
-        margin-right: 1.5rem;
-        color: #7e7e7e;
-      }
-      &.active {
-        background-color: rgba(109, 18, 219, 0.1);
+.steps {
+  @media (min-width: $desktop) {
+    display: flex;
+  }
+}
 
-        i {
-          color: $primary-color;
-        }
-      }
-      &::before {
-        counter-increment: section 1;
-        content: counter(section);
-        background: $primary-color;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 1.2rem;
-        width: 1.2rem;
-        border-radius: 50%;
-        color: #fff;
-        position: absolute;
-        left: -10px;
-        font-size: 12px;
-      }
+.step {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #f6f6f6;
+  padding: 1.5rem;
+  margin: 1rem 1.5rem;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
+  border-radius: 1.25rem;
+  font-weight: 500;
+
+  @media (min-width: 992px) {
+    flex: 1;
+  }
+  &__icon {
+    margin-right: 1.5rem;
+    color: #7e7e7e;
+    &.active {
+      color: $primary-color;
     }
+  }
+  &.active {
+    background-color: rgba(109, 18, 219, 0.1);
+  }
+  &::before {
+    counter-increment: section 1;
+    content: counter(section);
+    background: $primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.2rem;
+    width: 1.2rem;
+    border-radius: 50%;
+    color: #fff;
+    position: absolute;
+    left: -10px;
+    font-size: 12px;
   }
 }
 
