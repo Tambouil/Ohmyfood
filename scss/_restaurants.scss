@@ -43,12 +43,11 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1rem;
+    padding: 1rem;
   }
 }
 
 .menu {
-  padding-bottom: 1rem;
-
   &__title {
     text-transform: uppercase;
     position: relative;
@@ -77,6 +76,9 @@
     margin: 0;
     font-weight: 500;
     font-size: 18px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 
   &__price {
@@ -86,5 +88,10 @@
     span {
       font-weight: 500;
     }
+  }
+  &__side {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }

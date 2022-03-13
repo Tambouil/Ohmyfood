@@ -21,91 +21,113 @@
     </header>
 
     <main>
-      <section class="hero__image">
+      <section class="hero">
         <img
+          class="hero__image"
           src="../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg"
           alt="la pallette du goût"
         />
       </section>
 
-      <section class="menus">
-        <div class="menu">
-          <div class="menu__title">
+      <section class="menus-section">
+        <div class="menus">
+          <div class="menus__title">
             <h3>Le délice des sens</h3>
-            <i class="fa-solid fa-heart"></i>
+            <div class="heart-icon">
+              <svg
+                class="heart-main"
+                viewBox="0 0 512 512"
+                width="100"
+                title="heart"
+              >
+                <path
+                  d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+                />
+              </svg>
+              <svg
+                class="heart-background"
+                viewBox="0 0 512 512"
+                width="100"
+                title="heart"
+              >
+                <path
+                  d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"
+                />
+              </svg>
+            </div>
           </div>
 
-          <div class="menu__wrapper">
-            <div class="menu__wrapper__starter">
-              <h4>entrées</h4>
-              <div class="menu__wrapper__starter--choices">
-                <h5>Tartare de thon</h5>
-                <div class="price">
-                  <p>Assaisonné au yuzu</p>
+          <div class="menu-wrapper">
+            <div class="menu">
+              <h4 class="menu__title">entrées</h4>
+              <div class="menu__choices">
+                <h5 class="menu__food">Tartare de thon</h5>
+                <div class="menu__price">
+                  <p class="menu__side">Assaisonné au yuzu</p>
                   <span>25€</span>
                 </div>
               </div>
-              <div class="menu__wrapper__starter--choices">
-                <h5>Bouchée de homard croustillant</h5>
-                <div class="price">
-                  <p>Et sa farandole de petits légumes</p>
+              <div class="menu__choices">
+                <h5 class="menu__food">Bouchée de homard croustillant</h5>
+                <div class="menu__price">
+                  <p class="menu__side">Et sa farandole de petits légumes</p>
                   <span>35€</span>
                 </div>
               </div>
-              <div class="menu__wrapper__starter--choices">
-                <h5>Velouté de cèpes</h5>
-                <div class="price">
-                  <p>Aux truffes</p>
+              <div class="menu__choices">
+                <h5 class="menu__food">Velouté de cèpes</h5>
+                <div class="menu__price">
+                  <p class="menu__side">Aux truffes</p>
                   <span>20€</span>
                 </div>
               </div>
             </div>
 
-            <div class="menu__wrapper__starter">
-              <h4>plats</h4>
-              <div class="menu__wrapper__starter--choices">
-                <h5>Poulet rôti aux herbes de Provence</h5>
-                <div class="price">
-                  <p>Et sa crème de truffe</p>
+            <div class="menu">
+              <h4 class="menu__title">plats</h4>
+              <div class="menu__choices">
+                <h5 class="menu__food">Poulet rôti aux herbes de Provence</h5>
+                <div class="menu__price">
+                  <p class="menu__side">Et sa crème de truffe</p>
                   <span>40€</span>
                 </div>
               </div>
-              <div class="menu__wrapper__starter--choices">
-                <h5>Langouste rôtie</h5>
-                <div class="price">
-                  <p>Et ses légumes de saison</p>
+              <div class="menu__choices">
+                <h5 class="menu__food">Langouste rôtie</h5>
+                <div class="menu__price">
+                  <p class="menu__side">Et ses légumes de saison</p>
                   <span>35€</span>
                 </div>
               </div>
-              <div class="menu__wrapper__starter--choices">
-                <h5>Côte de boeuf Angus</h5>
-                <div class="price">
-                  <p>Et sa purée de panais</p>
+              <div class="menu__choices">
+                <h5 class="menu__food">Côte de boeuf Angus</h5>
+                <div class="menu__price">
+                  <p class="menu__side">Et sa purée de panais</p>
                   <span>44€</span>
                 </div>
               </div>
             </div>
 
-            <div class="menu__wrapper__starter">
-              <h4>desserts</h4>
-              <div class="menu__wrapper__starter--choices">
-                <h5>Farandole de desserts</h5>
-                <div class="price">
-                  <p>Du chef</p>
+            <div class="menu">
+              <h4 class="menu__title">desserts</h4>
+              <div class="menu__choices">
+                <h5 class="menu__food">Farandole de desserts</h5>
+                <div class="menu__price">
+                  <p class="menu__side">Du chef</p>
                   <span>18€</span>
                 </div>
               </div>
-              <div class="menu__wrapper__starter--choices">
-                <h5>Crème brulée</h5>
-                <div class="price">
-                  <p>Revisitée</p>
+              <div class="menu__choices">
+                <h5 class="menu__food">Crème brulée</h5>
+                <div class="menu__price">
+                  <p class="menu__side">Revisitée</p>
                   <span>22€</span>
                 </div>
               </div>
-              <div class="menu__wrapper__starter--choices">
-                <h5>Tiramisu</h5>
-                <div class="price">
-                  <p>À la noisette</p>
+              <div class="menu__choices">
+                <h5 class="menu__food">Tiramisu</h5>
+                <div class="menu__price">
+                  <p class="menu__side">À la noisette</p>
                   <span>23€</span>
                 </div>
               </div>
