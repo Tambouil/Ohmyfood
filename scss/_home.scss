@@ -1,7 +1,5 @@
 .location {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @extend %flex-center;
   background-color: #e9eaea;
   padding: 1.3rem;
   font-size: 18px;
@@ -48,13 +46,13 @@
   }
 }
 
-.steps {
+.items {
   @media (min-width: $desktop) {
     display: flex;
   }
 }
 
-.step {
+.item {
   display: flex;
   align-items: center;
   position: relative;
@@ -81,10 +79,8 @@
   &::before {
     counter-increment: section 1;
     content: counter(section);
+    @extend %flex-center;
     background: $primary-color;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 1.2rem;
     width: 1.2rem;
     border-radius: 50%;
@@ -95,67 +91,64 @@
   }
 }
 
-.restaurants {
+.restaurants-section {
   background-color: #f6f6f6;
   padding: 2.3rem 1rem;
+}
+.restaurants {
+  max-width: 1440px;
+  margin: 0 auto;
+  &__title {
+    padding: 1rem 1rem 0.5rem 0;
+    font-size: 22px;
+    font-weight: 700;
+    counter-reset: section;
+  }
   &__wrapper {
-    max-width: 1440px;
-    margin: 0 auto;
-    h3 {
-      padding: 1rem 1rem 0.5rem 0;
-      font-size: 22px;
-      font-weight: 700;
-      counter-reset: section;
+    @media (min-width: $desktop) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 1rem;
+      margin: 0;
     }
-    &--grid {
-      .restaurant {
-        background-color: #fff;
-        border-radius: 1rem;
-        margin: 1rem 0;
-        position: relative;
-        @media (min-width: $desktop) {
-          margin: 0;
+  }
+
+  .restaurant {
+    background-color: #fff;
+    border-radius: 1rem;
+    margin: 1rem 0;
+    position: relative;
+    @media (min-width: $desktop) {
+      margin: 0;
+    }
+    &__img {
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    &__tag {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 0.5rem 0.8rem;
+      border-radius: 5px;
+      background-color: $tertiary-color;
+      color: darken($tertiary-color, $amount: 40%);
+    }
+    &__content {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      p {
+        display: flex;
+        flex-direction: column;
+        font-weight: 300;
+        line-height: 1.5rem;
+        span {
+          font-weight: 500;
         }
-        img {
-          border-top-left-radius: 1rem;
-          border-top-right-radius: 1rem;
-          width: 100%;
-          height: 200px;
-          object-fit: cover;
-        }
-        .new {
-          position: absolute;
-          top: 20px;
-          right: 20px;
-          padding: 0.5rem 0.8rem;
-          border-radius: 5px;
-          background-color: $tertiary-color;
-          color: darken($tertiary-color, $amount: 40%);
-        }
-        .description {
-          display: flex;
-          justify-content: space-between;
-          padding: 1rem 1.5rem;
-          p {
-            display: flex;
-            flex-direction: column;
-            font-weight: 300;
-            line-height: 1.5rem;
-            span {
-              font-weight: 500;
-            }
-          }
-          i {
-            display: flex;
-            align-items: center;
-          }
-        }
-      }
-      @media (min-width: $desktop) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 1rem;
-        margin: 0;
       }
     }
   }

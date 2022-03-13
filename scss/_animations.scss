@@ -1,13 +1,16 @@
-.icon {
+.heart-icon {
   fill: transparent;
-  stroke: #ff2581;
+  stroke: black;
   stroke-width: 50;
   cursor: pointer;
   position: relative;
+  &:hover {
+    stroke: #ff2581;
+  }
 
   svg {
     overflow: visible;
-    width: 3rem;
+    width: 1.2rem;
   }
 
   path {
