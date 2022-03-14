@@ -9,3 +9,9 @@
   align-items: center;
   justify-content: space-between;
 }
+
+%flex-end {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}

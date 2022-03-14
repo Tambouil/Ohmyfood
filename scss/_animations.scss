@@ -5,12 +5,12 @@
   cursor: pointer;
   position: relative;
   &:hover {
-    stroke: #ff2581;
+    stroke: url(#gradient);
   }
 
   svg {
     overflow: visible;
-    width: 1.2rem;
+    width: 1.4rem;
   }
 
   path {
@@ -26,22 +26,18 @@
   }
 
   .heart-main:hover path {
-    animation: stroke-animation 2s ease-in-out forwards;
-  }
-
-  .heart-main:hover ~ .heart-background path {
-    animation: fade-animation 2s ease-in-out forwards;
+    animation: heart-animation 2s ease-in-out forwards;
   }
 }
 
-@keyframes stroke-animation {
+@keyframes heart-animation {
   0% {
     fill: transparent;
     transform: scale(1);
+    fill: url(#gradient);
   }
 
   20% {
-    fill: #ff2581;
     transform: scale(1.1);
   }
   40% {
@@ -49,6 +45,23 @@
   }
 
   100% {
-    fill: #ff2581;
+    fill: url(#gradient);
+  }
+}
+
+@keyframes slideup {
+  0% {
+    transform: translatey(20px);
+    opacity: 0%;
+  }
+  100% {
+    transform: translatey(0px);
+    opacity: 100%;
+  }
+}
+
+@for $i from 0 through 9 {
+  .data-#{$i} {
+    animation-delay: #{$i/10}s;
   }
 }
