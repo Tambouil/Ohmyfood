@@ -1,3 +1,4 @@
+// Like animation
 .heart-icon {
   fill: transparent;
   stroke: black;
@@ -49,7 +50,8 @@
   }
 }
 
-@keyframes slideup {
+// Menu animation
+@keyframes menu-animation {
   0% {
     transform: translatey(20px);
     opacity: 0%;

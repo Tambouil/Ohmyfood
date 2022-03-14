@@ -57,8 +57,8 @@
 
     &::after {
       content: "";
-      width: 55px;
-      height: 5px;
+      width: 40px;
+      height: 4px;
       background-color: $tertiary-color;
       position: absolute;
       left: 0;
@@ -69,16 +69,26 @@
     display: flex;
     background-color: #fff;
     box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
-    border-radius: 1.25rem;
-    padding: 1rem;
+    border-radius: 0.9rem;
     margin: 1rem 0;
     overflow: hidden;
-    animation: slideup 1s forwards;
+    cursor: pointer;
+    animation: menu-animation 1s forwards;
     opacity: 0;
+
+    &:hover {
+      .menu__check {
+        margin-right: 0;
+        i {
+          transform: rotate(360deg);
+        }
+      }
+    }
   }
 
   &__text {
     margin: 0;
+    padding: 1rem;
     font-weight: 500;
     font-size: 18px;
     flex: 1;
@@ -99,5 +109,24 @@
   &__price {
     @extend %flex-end;
     font-weight: 500;
+    padding: 1rem;
+  }
+
+  &__check {
+    @extend %flex-center;
+    padding: 1rem;
+    background-color: $tertiary-color;
+    width: 3.75rem;
+
+    margin-right: -3.75rem;
+    transition: 0.4s ease-in-out;
+
+    i {
+      color: #fff;
+      background-color: $tertiary-color;
+      font-size: 20px;
+      transform: rotate(90deg);
+      transition: 0.7s ease-in-out;
+    }
   }
 }
