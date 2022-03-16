@@ -33,8 +33,7 @@
     margin: 0 auto;
     padding: 1rem 0 3rem 0;
     a {
-      @include button();
-      padding: 1.15rem 4.5rem;
+      @include button(1.15rem 4.5rem);
     }
   }
   &__wrapper {
