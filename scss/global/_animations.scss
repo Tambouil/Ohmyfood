@@ -67,3 +67,58 @@
     animation-delay: #{$i/10}s;
   }
 }
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+  opacity: 0;
+  animation: Slide_TheEnd 2s linear;
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120px;
+  height: 22px;
+  border-radius: 20px;
+  color: $secondary-color;
+  border: 2px solid;
+  position: relative;
+}
+.loader::before {
+  content: "";
+  position: absolute;
+  margin: 2px;
+  inset: 0 100% 0 0;
+  border-radius: inherit;
+  background: $primary-color;
+  animation: p6 2s infinite;
+}
+@keyframes p6 {
+  100% {
+    inset: 0;
+  }
+}
+
+@keyframes Slide_TheEnd {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
