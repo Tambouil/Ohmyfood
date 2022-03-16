@@ -20,28 +20,26 @@ h1 {
 }
 
 .header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+  @extend %flex-center;
   position: relative;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
   z-index: 1;
 
   &__title {
+    font-size: 32px;
     padding: 1rem;
-    font-size: 2rem;
   }
   &__return {
     position: absolute;
-    left: 2.5rem;
+    left: 40px;
   }
 }
 
 footer {
+  width: 100%;
   background-color: #353436;
   color: #fff;
-  width: 100%;
-  padding: 0.8rem 1.5rem 2rem 1.5rem;
+  padding: 1rem 1.5rem 2rem;
 
   @media (min-width: $desktop) {
     padding: 2rem;
@@ -54,8 +52,8 @@ footer {
     padding: 0.5rem 0;
   }
   &__link {
-    padding: 0.3rem 0;
     font-size: 15px;
+    padding: 0.3rem 0;
   }
   &__icon {
     width: 1rem;

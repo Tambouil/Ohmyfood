@@ -1,73 +1,6 @@
-// Like animation
-.heart-icon {
-  fill: transparent;
-  stroke: black;
-  stroke-width: 50;
-  cursor: pointer;
-  position: relative;
-  &:hover {
-    stroke: url(#gradient);
-  }
+@use "sass:math";
 
-  svg {
-    overflow: visible;
-    width: 1.4rem;
-  }
-
-  path {
-    transform-origin: center;
-  }
-
-  .heart-background {
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    stroke: none;
-  }
-
-  .heart-main:hover path {
-    animation: heart-animation 2s ease-in-out forwards;
-  }
-}
-
-@keyframes heart-animation {
-  0% {
-    fill: transparent;
-    transform: scale(1);
-    fill: url(#gradient);
-  }
-
-  20% {
-    transform: scale(1.1);
-  }
-  40% {
-    transform: scale(1);
-  }
-
-  100% {
-    fill: url(#gradient);
-  }
-}
-
-// Menu animation
-@keyframes menu-animation {
-  0% {
-    transform: translatey(20px);
-    opacity: 0%;
-  }
-  100% {
-    transform: translatey(0px);
-    opacity: 100%;
-  }
-}
-
-@for $i from 0 through 9 {
-  .data-#{$i} {
-    animation-delay: #{$i/10}s;
-  }
-}
-
+// Loader Animation
 @keyframes loading {
   100% {
     inset: 0;
@@ -90,5 +23,82 @@
   100% {
     visibility: hidden;
     opacity: 0;
+  }
+}
+
+// Like Animation
+.heart-icon {
+  position: relative;
+  fill: transparent;
+  stroke: black;
+  stroke-width: 50;
+  cursor: pointer;
+  &:hover {
+    stroke: url(#gradient);
+  }
+
+  svg {
+    width: 1.4rem;
+    overflow: visible;
+  }
+
+  path {
+    transform-origin: center;
+  }
+
+  .heart-background {
+    position: absolute;
+    inset: 0;
+    stroke: none;
+    z-index: -1;
+  }
+
+  .heart-main:hover path {
+    animation: heart-animation 2s ease-in-out forwards;
+  }
+}
+
+@keyframes heart-animation {
+  0% {
+    fill: url(#gradient);
+  }
+
+  20% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(1);
+  }
+
+  100% {
+    fill: url(#gradient);
+  }
+}
+
+// Menu Animation
+@keyframes menu-animation {
+  0% {
+    transform: translatey(20px);
+    opacity: 0%;
+  }
+  100% {
+    transform: translatey(0px);
+    opacity: 100%;
+  }
+}
+
+@for $i from 0 through 9 {
+  .data-#{$i} {
+    animation-delay: #{math.div($i, 10)}s;
+  }
+}
+
+// Check Rotation Animation
+@keyframes rotation-icon {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

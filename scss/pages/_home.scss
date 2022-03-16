@@ -1,7 +1,6 @@
-.loader-container {
+.loader {
   position: fixed;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   z-index: 99;
@@ -9,36 +8,34 @@
   visibility: hidden;
   opacity: 0;
   animation: loading-hide 2s linear;
-}
 
-.loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 120px;
-  height: 22px;
-  border-radius: 20px;
-  color: $tertiary-color;
-  border: 2px solid;
-  position: relative;
-}
-.loader::before {
-  content: "";
-  position: absolute;
-  margin: 2px;
-  inset: 0 100% 0 0;
-  border-radius: inherit;
-  background: linear-gradient(0deg, $primary-color 0%, $secondary-color 100%);
-  animation: loading 2s;
+  &__progress {
+    position: relative;
+    inset: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 22px;
+    border-radius: 20px;
+    color: $tertiary-color;
+    border: 2px solid;
+  }
+  &__progress::before {
+    content: "";
+    position: absolute;
+    inset: 0 100% 0 0;
+    border-radius: inherit;
+    background: linear-gradient(0deg, $primary-color 0%, $secondary-color 100%);
+    margin: 2px;
+    animation: loading 2s;
+  }
 }
 
 .location {
   @extend %flex-center;
   background-color: #e9eaea;
-  padding: 1.3rem;
   font-size: 18px;
   font-weight: 500;
+  padding: 1.5rem;
 
   &__icon {
     margin-right: 1rem;
@@ -46,8 +43,8 @@
 }
 
 .explorer {
-  text-align: center;
   background-color: #f6f6f6;
+  text-align: center;
   padding: 2rem;
   &__title {
     font-size: 28px;
@@ -56,8 +53,7 @@
   }
   &__text {
     font-weight: 300;
-    margin-top: 1rem;
-    margin-bottom: 3rem;
+    margin: 1rem 0 3rem;
   }
   &__btn {
     margin: 0 auto;
@@ -69,14 +65,14 @@
 }
 
 .tutorial {
-  padding-bottom: 1rem;
   max-width: 1440px;
   margin: 0 auto;
+  padding-bottom: 1rem;
   &__title {
-    margin-top: 2rem;
-    padding: 1rem;
     font-size: 22px;
     font-weight: 700;
+    margin-top: 2rem;
+    padding: 1rem;
     counter-reset: section;
   }
 }
@@ -92,85 +88,82 @@
   align-items: center;
   position: relative;
   background-color: #f6f6f6;
-  padding: 1.5rem;
-  margin: 1rem 1.5rem;
-  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
-  border-radius: 1.25rem;
   font-weight: 500;
+  border-radius: 1.3rem;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  margin: 1rem 1.5rem;
+  padding: 1.5rem;
 
   @media (min-width: 992px) {
     flex: 1;
   }
   &__icon {
-    margin-right: 1.5rem;
     color: #7e7e7e;
+    margin-right: 1.5rem;
     &.active {
       color: $primary-color;
     }
   }
   &.active {
-    background-color: rgba(109, 18, 219, 0.1);
+    background-color: lighten($primary-color, $amount: 33%);
   }
   &::before {
     counter-increment: section 1;
     content: counter(section);
     @extend %flex-center;
-    background: $primary-color;
-    height: 1.2rem;
-    width: 1.2rem;
-    border-radius: 50%;
-    color: #fff;
     position: absolute;
     left: -10px;
+    height: 1.4rem;
+    width: 1.4rem;
+    border-radius: 100%;
+    background: $primary-color;
+    color: #fff;
     font-size: 12px;
   }
 }
 
 .restaurants-section {
   background-color: #f6f6f6;
-  padding: 2.3rem 1rem;
+  padding: 2rem 1rem;
 }
 .restaurants {
   max-width: 1440px;
   margin: 0 auto;
   &__title {
-    padding: 1rem 1rem 0.5rem 0;
+    counter-reset: section;
     font-size: 22px;
     font-weight: 700;
-    counter-reset: section;
+    padding: 0.5rem 0;
   }
   &__wrapper {
     @media (min-width: $desktop) {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 1rem;
-      margin: 0;
     }
   }
 
   .restaurant {
+    position: relative;
     background-color: #fff;
     border-radius: 1rem;
     margin: 1rem 0;
-    position: relative;
     @media (min-width: $desktop) {
       margin: 0;
     }
     &__img {
-      border-top-left-radius: 1rem;
-      border-top-right-radius: 1rem;
       width: 100%;
       height: 200px;
+      border-radius: 1rem 1rem 0 0;
       object-fit: cover;
     }
     &__tag {
       position: absolute;
-      top: 20px;
-      right: 20px;
-      padding: 0.5rem 0.8rem;
-      border-radius: 5px;
+      inset: 20px 20px auto auto;
       background-color: $tertiary-color;
       color: darken($tertiary-color, $amount: 40%);
+      border-radius: 5px;
+      padding: 0.5rem 0.8rem;
     }
     &__content {
       display: flex;
