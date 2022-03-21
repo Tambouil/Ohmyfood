@@ -27,44 +27,29 @@
 }
 
 // Like Animation
-.heart-icon {
+.heart {
   position: relative;
-  fill: transparent;
-  stroke: black;
+  width: 1.4rem;
   stroke-width: 50;
+  stroke: black;
+  fill: white;
+  overflow: visible;
   cursor: pointer;
-  &:hover {
-    stroke: url(#gradient);
-  }
 
-  svg {
-    width: 1.4rem;
+  &__background {
+    position: relative;
     overflow: visible;
+    &:hover {
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
   }
-
-  path {
-    transform-origin: center;
-  }
-
-  .heart-main:hover path {
-    animation: heart-animation 2s ease-in-out forwards;
-  }
-}
-
-@keyframes heart-animation {
-  0% {
+  &__main {
+    position: absolute;
+    inset: 0;
     fill: url(#gradient);
-  }
-
-  20% {
-    transform: scale(1.1);
-  }
-  40% {
-    transform: scale(1);
-  }
-
-  100% {
-    fill: url(#gradient);
+    stroke: url(#gradient);
+    overflow: visible;
   }
 }
 
