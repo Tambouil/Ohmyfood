@@ -46,13 +46,6 @@
     transform-origin: center;
   }
 
-  .heart-background {
-    position: absolute;
-    inset: 0;
-    stroke: none;
-    z-index: -1;
-  }
-
   .heart-main:hover path {
     animation: heart-animation 2s ease-in-out forwards;
   }
