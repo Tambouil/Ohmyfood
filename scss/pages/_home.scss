@@ -6,7 +6,6 @@
   z-index: 99;
   backdrop-filter: blur(5px);
   visibility: hidden;
-  opacity: 0;
   animation: loading-hide 2s linear;
 
   &__progress {

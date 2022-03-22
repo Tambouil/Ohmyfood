@@ -1,0 +1,25 @@
+.heart {
+  position: relative;
+  width: 1.4rem;
+  stroke-width: 50;
+  stroke: black;
+  fill: white;
+  overflow: visible;
+  cursor: pointer;
+
+  &__background {
+    position: relative;
+    overflow: visible;
+    &:hover {
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+  }
+  &__main {
+    position: absolute;
+    inset: 0;
+    fill: url(#gradient);
+    stroke: url(#gradient);
+    overflow: visible;
+  }
+}
