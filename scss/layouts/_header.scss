@@ -1,0 +1,15 @@
+.header {
+  @extend %flex-center;
+  position: relative;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+
+  &__title {
+    font-size: 32px;
+    padding: 1rem;
+  }
+  &__return {
+    position: absolute;
+    left: 40px;
+  }
+}

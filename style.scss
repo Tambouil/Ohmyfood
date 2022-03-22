@@ -1,7 +1,10 @@
-@import "scss/global/reset";
-@import "scss/global/base";
-@import "scss/global/mixins";
-@import "scss/global/placeholder";
+@import "scss/base/reset";
+@import "scss/base/typography";
+@import "scss/utils/variables";
+@import "scss/utils/mixins";
+@import "scss/utils/placeholder";
+@import "scss/layouts/header";
+@import "scss/layouts/footer";
 @import "scss/pages/home";
 @import "scss/pages/restaurants";
-@import "scss/global/animations";
+@import "scss/utils/animations";
